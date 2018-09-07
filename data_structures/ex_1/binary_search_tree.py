@@ -10,7 +10,7 @@ class BinarySearchTree:
     # callback appends x into array
     # start at root node
     cb(self.value)
-    print(self.value)
+    # print(self.value)
     #traverse as far as possible along each branch
     if self.left is not None:
       self.left.depth_first_for_each(cb)
@@ -19,7 +19,15 @@ class BinarySearchTree:
     return
 
   def breadth_first_for_each(self, cb):
-    pass
+    #initialize queue
+    queue = [self]
+    # create for loop and check if nodes exist left and/or right, if it does then append to queue
+    for node in queue:
+      cb(node.value)
+      if node.left is not None:
+        queue.append(node.left)
+      if node.right is not None:
+        queue.append(node.right)
 
   def insert(self, value):
     new_tree = BinarySearchTree(value)
