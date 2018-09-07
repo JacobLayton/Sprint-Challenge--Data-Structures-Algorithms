@@ -5,8 +5,18 @@ class BinarySearchTree:
     self.right = None
 
   def depth_first_for_each(self, cb):
-    visited = []
-    if 
+    # arr = []
+    # cb = lambda x: arr.append(x)
+    # callback appends x into array
+    # start at root node
+    cb(self.value)
+    print(self.value)
+    #traverse as far as possible along each branch
+    if self.left is not None:
+      self.left.depth_first_for_each(cb)
+    if self.right is not None:
+      self.right.depth_first_for_each(cb)
+    return
 
   def breadth_first_for_each(self, cb):
     pass
